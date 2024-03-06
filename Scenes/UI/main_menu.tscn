@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://cas0mydg6jubu"]
+
+[ext_resource type="Theme" uid="uid://cv30eg2cifpt4" path="res://Assets/Themes/default_menu_theme.tres" id="1_10s88"]
+[ext_resource type="Script" path="res://Scripts/UI/main_menu.gd" id="2_6xxja"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_10s88")
+script = ExtResource("2_6xxja")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.177866, 0.537537, 0.672108, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "Hot Pursuit
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnsVBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="StartGameAloneBtn" type="Button" parent="MarginContainer/VBoxContainer/BtnsVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 18
+text = "Start Alone"
+
+[node name="StartGameCoOpBtn" type="Button" parent="MarginContainer/VBoxContainer/BtnsVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "Start Game Not Alone"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BtnsVBox/StartGameAloneBtn" to="." method="_on_start_game_alone_btn_pressed"]

@@ -10,12 +10,11 @@ var player_current_positions = 289
 var finger_current_position: Vector2
 var finger_start_position: Vector2
 
-const PLAYER_SPEED = -1  # to go up
+@export var player_health = 2
 
+signal game_over()
 
 func player_move_gesture():
-	#position.y += PLAYER_SPEED
-	
 	if Input.is_action_just_pressed("SwipeGesture"):
 		if !swiping:
 			swiping = true
@@ -40,11 +39,11 @@ func _process(delta):
 	player_move_gesture()
 	move_and_collide(velocity * delta, true)
 
-func _physics_process(delta):
-	pass
-
-
 func _on_player_collision_detection_body_entered(body :Node2D):
 	if body.is_in_group("car"):
-		# todo: implement two hits then game over mechanism.
 		body.queue_free()
+		player_health -= 1
+	if player_health == 0:
+		queue_free()
+		game_over.emit()
+		
