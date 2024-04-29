@@ -6,9 +6,10 @@ class_name UI
 
 signal start_game()
 
-func _on_player_game_over():
+func show_game_over_screen():
+	show()
 	game_over_screen.visible = true
-
+	main_menu.visible = false
 
 func _on_main_menu_start_game():
 	start_game.emit()

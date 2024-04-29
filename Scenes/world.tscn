@@ -1,13 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bivatbt3fgqt"]
+[gd_scene load_steps=5 format=3 uid="uid://bivatbt3fgqt"]
 
 [ext_resource type="Script" path="res://Scripts/World.gd" id="1_iai4r"]
 [ext_resource type="PackedScene" uid="uid://w07x6te4s4nw" path="res://Scenes/player.tscn" id="2_2b82l"]
+[ext_resource type="PackedScene" uid="uid://r1e5c05nuwd8" path="res://Scenes/UI/ui.tscn" id="3_i2f8p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wj1p"]
 size = Vector2(41.6834, 66.5331)
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" groups=["world"]]
 script = ExtResource("1_iai4r")
+
+[node name="UI" parent="." groups=["game_over"] instance=ExtResource("3_i2f8p")]
+layer = 19
+visible = false
 
 [node name="PlayableArea" type="Area2D" parent="."]
 position = Vector2(0, -704)
@@ -21,7 +26,7 @@ scale = Vector2(19.96, 19.96)
 shape = SubResource("RectangleShape2D_0wj1p")
 
 [node name="Player" parent="." instance=ExtResource("2_2b82l")]
-position = Vector2(289, 944)
+position = Vector2(289, 808)
 motion_mode = 1
 
 [node name="CarsSpawn" type="Timer" parent="."]
@@ -31,4 +36,5 @@ autostart = true
 
 [connection signal="body_exited" from="PlayableArea" to="." method="_on_playable_area_body_exited"]
 [connection signal="game_over" from="Player" to="." method="_on_player_game_over"]
+[connection signal="game_over" from="Player" to="UI" method="_on_player_game_over"]
 [connection signal="timeout" from="CarsSpawn" to="." method="_on_cars_spawn_timeout"]

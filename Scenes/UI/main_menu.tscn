@@ -51,17 +51,17 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 6
 
-[node name="StartGameAloneBtn" type="Button" parent="MarginContainer/VBoxContainer/BtnsVBox"]
+[node name="RideHomeBtn" type="Button" parent="MarginContainer/VBoxContainer/BtnsVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 18
-text = "Start Alone"
+text = "Ride Home"
 
-[node name="StartGameCoOpBtn" type="Button" parent="MarginContainer/VBoxContainer/BtnsVBox"]
+[node name="RaceWithFriendsBtn" type="Button" parent="MarginContainer/VBoxContainer/BtnsVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 18
 disabled = true
-text = "Start Game Not Alone"
+text = "Race With Friends"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/BtnsVBox/StartGameAloneBtn" to="." method="_on_start_game_alone_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BtnsVBox/RideHomeBtn" to="." method="_on_start_game_alone_btn_pressed"]

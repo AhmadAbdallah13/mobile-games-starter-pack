@@ -4,9 +4,7 @@ extends Node2D
 
 
 func start_game():
-	var world = WorldScene.instantiate()
-	add_child(world)
-
+	get_tree().call_deferred("change_scene_to_file", "res://Scenes/world.tscn")
 
 func _on_ui_start_game():
 	start_game()

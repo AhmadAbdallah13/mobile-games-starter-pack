@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://r1e5c05nuwd8" path="res://Scenes/UI/ui.tscn" id="2_wiv2i"]
 [ext_resource type="PackedScene" uid="uid://bivatbt3fgqt" path="res://Scenes/world.tscn" id="3_udb3m"]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" groups=["game"]]
 script = ExtResource("1_gpe4b")
 WorldScene = ExtResource("3_udb3m")
 
