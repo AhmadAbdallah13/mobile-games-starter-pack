@@ -51,17 +51,24 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 6
 
-[node name="RideHomeBtn" type="Button" parent="MarginContainer/VBoxContainer/BtnsVBox"]
+[node name="Arena" type="Button" parent="MarginContainer/VBoxContainer/BtnsVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 18
-text = "Ride Home"
+text = "Arena"
 
-[node name="RaceWithFriendsBtn" type="Button" parent="MarginContainer/VBoxContainer/BtnsVBox"]
+[node name="Profile" type="Button" parent="MarginContainer/VBoxContainer/BtnsVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 18
 disabled = true
-text = "Race With Friends"
+text = "Profile"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/BtnsVBox/RideHomeBtn" to="." method="_on_start_game_alone_btn_pressed"]
+[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer/BtnsVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "Settings"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BtnsVBox/Arena" to="." method="_on_arena_btn_pressed"]

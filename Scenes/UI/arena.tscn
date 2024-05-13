@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://crkda284nekk8"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.177866, 0.537537, 0.672108, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VPageContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HStatusBarContainer" type="HBoxContainer" parent="MarginContainer/VPageContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="MarginContainer/VPageContainer/HStatusBarContainer"]
+layout_mode = 2
+text = "Money Status
+"
+
+[node name="Button2" type="Button" parent="MarginContainer/VPageContainer/HStatusBarContainer"]
+layout_mode = 2
+text = "Car Status: Patched Up
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VPageContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="BtnsVBox" type="VBoxContainer" parent="MarginContainer/VPageContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="CompeteOnline" type="Button" parent="MarginContainer/VPageContainer/VBoxContainer/BtnsVBox"]
+layout_mode = 2
+text = "Compete Online"
+
+[node name="CompeteInServer" type="Button" parent="MarginContainer/VPageContainer/VBoxContainer/BtnsVBox"]
+layout_mode = 2
+text = "Compete In A server"
+
+[node name="Cars" type="Button" parent="MarginContainer/VPageContainer/VBoxContainer/BtnsVBox"]
+layout_mode = 2
+text = "Cars"
