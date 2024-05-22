@@ -21,8 +21,8 @@ globals="*res://Globals/global.gd"
 
 [display]
 
-window/size/viewport_width=600
-window/size/viewport_height=1000
+window/size/viewport_width=800
+window/size/viewport_height=1500
 window/stretch/mode="canvas_items"
 window/handheld/orientation=1
 
