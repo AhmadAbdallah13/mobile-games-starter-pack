@@ -1,18 +1,15 @@
 extends CharacterBody2D
 
-var tile_size = 64
 var length = 64
 var swiping = false
 
-var player_allowed_positions = [97, 289, 481]
-var player_current_positions = 289
+var player_allowed_positions = [195, 387, 579]
 
 var finger_current_position: Vector2
 var finger_start_position: Vector2
 
 @export var player_health = 2
 
-signal game_over()
 
 func player_move_gesture():
 	if Input.is_action_just_pressed("SwipeGesture"):
@@ -45,5 +42,5 @@ func _on_player_collision_detection_body_entered(body :Node2D):
 		player_health -= 1
 	if player_health == 0:
 		queue_free()
-		game_over.emit()
+		globals.game_over.emit()
 		

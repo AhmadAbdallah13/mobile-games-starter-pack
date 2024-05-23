@@ -1,12 +1,15 @@
 extends Node2D
 
-var cars_x_ranges = [97, 289, 481]
+var cars_x_ranges = [195, 387, 579]
 
 const CAR = preload("res://Scenes/car.tscn")
 const PLAYER = preload("res://Scenes/player.tscn")
 
 @onready var player = $Player
 @onready var cars_container = $CarsContainer
+
+func _ready():
+	globals.game_over.connect(_on_player_game_over)
 
 func _on_playable_area_body_exited(body):
 	if body is CharacterBody2D:

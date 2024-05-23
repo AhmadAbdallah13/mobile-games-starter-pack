@@ -1,12 +1,15 @@
-[gd_scene format=3 uid="uid://crkda284nekk8"]
+[gd_scene load_steps=2 format=3 uid="uid://crkda284nekk8"]
 
-[node name="Control" type="Control"]
+[ext_resource type="Script" path="res://Scripts/UI/arena.gd" id="1_spl84"]
+
+[node name="Arena" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_spl84")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -69,3 +72,5 @@ text = "Compete In A server"
 [node name="Cars" type="Button" parent="MarginContainer/VPageContainer/VBoxContainer/BtnsVBox"]
 layout_mode = 2
 text = "Cars"
+
+[connection signal="pressed" from="MarginContainer/VPageContainer/VBoxContainer/BtnsVBox/CompeteOnline" to="." method="_on_compete_online_pressed"]

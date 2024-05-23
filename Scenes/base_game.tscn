@@ -1,11 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://7y12byty7m0o"]
+[gd_scene load_steps=2 format=3 uid="uid://7y12byty7m0o"]
 
-[ext_resource type="Script" path="res://Scripts/base_game.gd" id="1_3jyo7"]
-[ext_resource type="PackedScene" uid="uid://bivatbt3fgqt" path="res://Scenes/world.tscn" id="2_g456p"]
 [ext_resource type="PackedScene" uid="uid://r1e5c05nuwd8" path="res://Scenes/UI/ui.tscn" id="3_fu728"]
 
 [node name="BaseGame" type="Node2D" groups=["game"]]
-script = ExtResource("1_3jyo7")
-WorldScene = ExtResource("2_g456p")
 
 [node name="UI" parent="." instance=ExtResource("3_fu728")]

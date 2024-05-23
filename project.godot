@@ -21,10 +21,9 @@ globals="*res://Globals/global.gd"
 
 [display]
 
-window/size/viewport_width=800
-window/size/viewport_height=1500
+window/size/viewport_width=730
+window/size/viewport_height=1446
 window/stretch/mode="canvas_items"
-window/handheld/orientation=1
 
 [file_customization]
 

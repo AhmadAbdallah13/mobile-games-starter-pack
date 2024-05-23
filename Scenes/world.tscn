@@ -5,9 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://r1e5c05nuwd8" path="res://Scenes/UI/ui.tscn" id="3_i2f8p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wj1p"]
-size = Vector2(41.6834, 66.5331)
+size = Vector2(37.725, 56.5344)
 
 [node name="World" type="Node2D" groups=["world"]]
+scale = Vector2(0.991132, 0.991133)
 script = ExtResource("1_iai4r")
 
 [node name="UI" parent="." groups=["game_over"] instance=ExtResource("3_i2f8p")]
@@ -15,18 +16,18 @@ layer = 19
 visible = false
 
 [node name="PlayableArea" type="Area2D" parent="."]
-position = Vector2(0, -704)
-scale = Vector2(1, 1.52)
+position = Vector2(0, -387.436)
+scale = Vector2(1, 1.72179)
 collision_layer = 5
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayableArea"]
-position = Vector2(288, 552)
+position = Vector2(377.505, 566.869)
 scale = Vector2(19.96, 19.96)
 shape = SubResource("RectangleShape2D_0wj1p")
 
 [node name="Player" parent="." instance=ExtResource("2_2b82l")]
-position = Vector2(289, 808)
+position = Vector2(387.436, 1304.57)
 motion_mode = 1
 
 [node name="CarsSpawn" type="Timer" parent="."]
@@ -35,6 +36,4 @@ autostart = true
 [node name="CarsContainer" type="Node2D" parent="."]
 
 [connection signal="body_exited" from="PlayableArea" to="." method="_on_playable_area_body_exited"]
-[connection signal="game_over" from="Player" to="." method="_on_player_game_over"]
-[connection signal="game_over" from="Player" to="UI" method="_on_player_game_over"]
 [connection signal="timeout" from="CarsSpawn" to="." method="_on_cars_spawn_timeout"]
