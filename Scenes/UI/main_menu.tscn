@@ -69,7 +69,7 @@ text = "Profile"
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 18
-disabled = true
 text = "Settings"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/BtnsVBox/Arena" to="." method="_on_arena_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BtnsVBox/Settings" to="." method="_on_settings_pressed"]

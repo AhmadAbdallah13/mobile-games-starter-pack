@@ -15,15 +15,21 @@ run/main_scene="res://Scenes/base_game.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://Assets/icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://Scripts/Settings/Sound/default_bus_layout.tres"
+
 [autoload]
 
 globals="*res://Globals/global.gd"
+TestingMusic="*res://Scenes/Autoloads/testing_music.tscn"
 
 [display]
 
 window/size/viewport_width=730
 window/size/viewport_height=1446
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [file_customization]
 
