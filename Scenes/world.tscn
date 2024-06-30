@@ -27,13 +27,33 @@ scale = Vector2(19.96, 19.96)
 shape = SubResource("RectangleShape2D_0wj1p")
 
 [node name="Player" parent="." instance=ExtResource("2_2b82l")]
-position = Vector2(387.436, 1304.57)
+position = Vector2(387.436, 1078.57)
 motion_mode = 1
 
-[node name="CarsSpawn" type="Timer" parent="."]
+[node name="TrafficCarsSpawns" type="Node" parent="."]
+
+[node name="CarsSpawn" type="Timer" parent="TrafficCarsSpawns"]
 autostart = true
 
-[node name="CarsContainer" type="Node2D" parent="."]
+[node name="CarsContainer" type="Node2D" parent="TrafficCarsSpawns"]
+scale = Vector2(0.991132, 0.991133)
+
+[node name="SpawnMarkers" type="Node" parent="TrafficCarsSpawns"]
+
+[node name="SpawnMarker1" type="Marker2D" parent="TrafficCarsSpawns/SpawnMarkers"]
+unique_name_in_owner = true
+position = Vector2(195, -62.089)
+scale = Vector2(0.991132, 0.991133)
+
+[node name="SpawnMarker2" type="Marker2D" parent="TrafficCarsSpawns/SpawnMarkers"]
+unique_name_in_owner = true
+position = Vector2(387, -62.089)
+scale = Vector2(0.991132, 0.991133)
+
+[node name="SpawnMarker3" type="Marker2D" parent="TrafficCarsSpawns/SpawnMarkers"]
+unique_name_in_owner = true
+position = Vector2(579, -62.089)
+scale = Vector2(0.991132, 0.991133)
 
 [connection signal="body_exited" from="PlayableArea" to="." method="_on_playable_area_body_exited"]
-[connection signal="timeout" from="CarsSpawn" to="." method="_on_cars_spawn_timeout"]
+[connection signal="timeout" from="TrafficCarsSpawns/CarsSpawn" to="." method="_on_cars_spawn_timeout"]
