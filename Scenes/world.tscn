@@ -11,6 +11,11 @@ size = Vector2(37.725, 56.5344)
 scale = Vector2(0.991132, 0.991133)
 script = ExtResource("1_iai4r")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 718.0
+offset_bottom = 1235.0
+color = Color(1, 0.196078, 1, 1)
+
 [node name="UI" parent="." groups=["game_over"] instance=ExtResource("3_i2f8p")]
 layer = 19
 visible = false
